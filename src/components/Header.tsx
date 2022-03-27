@@ -18,7 +18,7 @@ export function Header() {
       align="center"
     >
       <Text fontSize="3xl" fontWeight="bold" letterSpacing="tighter" w="64">
-        DashGo
+        Minha Puta
         <Text as="span" ml="1" color="pink.500">
           .
         </Text>
