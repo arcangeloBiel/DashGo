@@ -1,4 +1,10 @@
-import { Text, Box, Button, Checkbox, Flex, Heading,
+import {
+  Text,
+  Box,
+  Button,
+  Checkbox,
+  Flex,
+  Heading,
   Icon,
   Table,
   Tbody,
@@ -13,14 +19,13 @@ import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Sidebar } from "../../components/Sidebar";
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination/Index";
-
+import Link from "next/link";
 
 export default function UserList() {
-
-const isWideVersion = useBreakpointValue({
-  base: false,
-  lg: true
-})
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
 
   return (
     <Box>
@@ -33,32 +38,34 @@ const isWideVersion = useBreakpointValue({
             <Heading size="lg" fontWeight="normal">
               Usuários
             </Heading>
-            <Button
-              as="a"
-              size="sm"
-              fontFamily="sm"
-              colorScheme="pink"
-              leftIcon={<Icon as={RiAddLine} fontSize="20" />}
-            >
-              Criar novo
-            </Button>
+            <Link href="/users/create" passHref>
+              <Button
+                as="a"
+                size="sm"
+                fontFamily="sm"
+                colorScheme="pink"
+                leftIcon={<Icon as={RiAddLine} fontSize="20" />}
+              >
+                Criar novo
+              </Button>
+            </Link>
           </Flex>
 
           <Table colorScheme="whiteAlpha">
             <Thead>
               <Tr>
-                <Th px={["4","4","6"]} color="gray.300" width="8">
+                <Th px={["4", "4", "6"]} color="gray.300" width="8">
                   <Checkbox colorScheme="pink" />
                 </Th>
                 <Th>Usuário</Th>
-                {isWideVersion &&  <Th>Data cadastro</Th>}
-               
+                {isWideVersion && <Th>Data cadastro</Th>}
+
                 <Th width="8"></Th>
               </Tr>
             </Thead>
             <Tbody>
               <Tr>
-                <Td px={["4","4","6"]}>
+                <Td px={["4", "4", "6"]}>
                   <Checkbox colorScheme="pink" />
                 </Td>
                 <Td>
@@ -69,8 +76,8 @@ const isWideVersion = useBreakpointValue({
                     </Text>
                   </Box>
                 </Td>
-                {isWideVersion &&   <Td>07 de abril, 2020</Td>}
-             
+                {isWideVersion && <Td>07 de abril, 2020</Td>}
+
                 <Td>
                   <Button
                     as="a"
@@ -79,7 +86,7 @@ const isWideVersion = useBreakpointValue({
                     colorScheme="purple"
                     leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
                   >
-                    {isWideVersion? 'Editar': ''}
+                    {isWideVersion ? "Editar" : ""}
                   </Button>
                 </Td>
               </Tr>
